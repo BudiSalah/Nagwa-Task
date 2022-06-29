@@ -6,6 +6,7 @@
 .header {
   padding-block: 24px;
   background-color: map-get($colors, grey, 100);
+  border: 1px solid map-get($colors, grey, 200);
 
   &__container {
     gap: map-get($space, "sm");
