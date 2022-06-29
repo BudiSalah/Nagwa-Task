@@ -14,8 +14,16 @@
   font-weight: 700;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .relative {
   position: relative;
+}
+
+.section {
+  padding-block: map-get($space, "xl");
 }
 
 .flex {

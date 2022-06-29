@@ -3,7 +3,8 @@ $colors: (
     100: #333333,
   ),
   blue: (
-    100: #026bb0,
+    100: rgba(2, 107, 176, 10%),
+    200: #026bb0,
   ),
   brown: (
     100: #ae7129,
@@ -39,6 +40,10 @@ $space: (
   sm: 8px,
   xs: 4px,
 );
+
+$border: 1px solid map-get($colors, grey, 200);
+
+$transition: 0.2s all ease-out;
 
 $media: (
   sm: 576px,

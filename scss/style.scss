@@ -6,7 +6,7 @@
 .header {
   padding-block: 24px;
   background-color: map-get($colors, grey, 100);
-  border: 1px solid map-get($colors, grey, 200);
+  border: $border;
 
   &__container {
     gap: map-get($space, "sm");
@@ -32,18 +32,14 @@
     }
   }
 
-  &__btn {
-    cursor: pointer;
-  }
-
   &__span {
     padding: 12px;
     background-color: white;
-    border: 1px solid #{map-get($colors, grey, 200)};
+    border: $border;
     border-radius: map-get($space, "sm");
 
     svg {
-      fill: map-get($colors, blue, 100);
+      fill: map-get($colors, blue, 200);
     }
   }
 
@@ -52,6 +48,118 @@
 
     svg {
       fill: map-get($colors, grey, 700);
+    }
+  }
+}
+
+.childs {
+  padding-block: map-get($space, "md");
+  flex-wrap: wrap;
+  gap: map-get($space, "md");
+
+  // @media screen and (min-width: map-get($media, "md")) {
+  //   flex-direction: row;
+  // }
+
+  &__figure {
+    max-width: 170px;
+    gap: map-get($space, "sm");
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__caption {
+    font-size: 24px;
+    text-transform: capitalize;
+  }
+
+  &__wrapper {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: map-get($space, "md");
+
+    @media screen and (min-width: map-get($media, "md")) {
+      width: auto;
+    }
+
+    @media screen and (min-width: map-get($media, "sm")) {
+      justify-content: unset;
+    }
+  }
+
+  &__btns {
+    flex-wrap: wrap;
+    margin-inline-end: map-get($space, "md");
+    gap: map-get($space, "md");
+
+    &-caption {
+      @media screen and (min-width: map-get($media, "xxl")) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__btn {
+    min-width: 100px;
+    padding-block: 7px;
+    border: 1px solid map-get($colors, grey, 300);
+    border-radius: map-get($space, "sm");
+    transition: $transition;
+
+    &:hover,
+    &.active {
+      background-color: map-get($colors, blue, 100);
+      border-color: map-get($colors, blue, 100);
+
+      figure {
+        color: map-get($colors, blue, 200) !important;
+        font-weight: bold !important;
+      }
+    }
+
+    figure {
+      color: map-get($colors, black, 100);
+      font-weight: 400;
+      gap: map-get($space, "sm");
+    }
+
+    img {
+      width: 100%;
+      max-width: 28px;
+    }
+  }
+
+  &__add {
+    min-width: 135px;
+    padding-block: 10px;
+    color: map-get($colors, blue, 200);
+    text-align: center;
+    border: 1px solid map-get($colors, blue, 200);
+    border-radius: map-get($space, "sm");
+    gap: map-get($space, "xs");
+    transition: $transition;
+
+    &:hover {
+      color: white;
+      border-color: white;
+      background-color: map-get($colors, blue, 200);
+
+      svg {
+        fill: white;
+      }
+    }
+
+    svg {
+      fill: map-get($colors, blue, 200);
+    }
+
+    &-text {
+      @media screen and (min-width: map-get($media, "xxl")) {
+        font-size: 16px;
+      }
     }
   }
 }
