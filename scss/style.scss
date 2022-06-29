@@ -1,11 +1,56 @@
-@import "./_variables.scss";
+@import "./variables";
+@import "./reset";
+@import "./components";
+@import "./utilities";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+.header {
+  padding-block: 24px;
+  background-color: map-get($colors, grey, 100);
 
-.font-notosans {
-  font-family: "Noto Sans", sans-serif;
+  &__container {
+    gap: map-get($space, "sm");
+  }
+
+  &__figure {
+    gap: map-get($space, "sm");
+  }
+
+  &__caption {
+    font-size: 14px;
+
+    @media screen and (min-width: map-get($media, "xxl")) {
+      font-size: 18px;
+    }
+  }
+
+  &__btns {
+    gap: map-get($space, "sm");
+
+    @media screen and (min-width: map-get($media, "sm")) {
+      gap: 24px;
+    }
+  }
+
+  &__btn {
+    cursor: pointer;
+  }
+
+  &__span {
+    padding: 12px;
+    background-color: white;
+    border: 1px solid #{map-get($colors, grey, 200)};
+    border-radius: map-get($space, "sm");
+
+    svg {
+      fill: map-get($colors, blue, 100);
+    }
+  }
+
+  &__chevron {
+    margin-inline-start: map-get($space, "sm");
+
+    svg {
+      fill: map-get($colors, grey, 700);
+    }
+  }
 }
