@@ -158,3 +158,25 @@
   overflow: hidden;
   height: 450px;
 }
+
+.footer {
+  padding-block: map-get($space, "base");
+
+  &__wrapper {
+    flex-wrap: wrap;
+    gap: map-get($space, "sm");
+  }
+
+  &__figure {
+    width: 75px;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__copyright {
+    color: map-get($colors, grey, 500);
+    font-size: 14px;
+  }
+}
