@@ -6,6 +6,10 @@
   margin: auto;
   padding-inline: map-get($space, "md");
 
+  &--table {
+    overflow-x: auto;
+  }
+
   @media screen and (min-width: map-get($media, "lg")) {
     max-width: calc(945px + (map-get($space, "lg") * 2));
     padding-inline: map-get($space, "lg");
@@ -71,6 +75,52 @@
   &__text {
     @media screen and (min-width: map-get($media, "xxl")) {
       font-size: 16px;
+    }
+  }
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: map-get($space, "xs");
+
+  * {
+    @extend .font-notosans;
+    @extend .font-normal;
+    @extend .capitalize;
+    font-size: 14px;
+  }
+
+  thead {
+    th {
+      height: 45px;
+      color: map-get($colors, grey, 500);
+      background-color: white;
+    }
+  }
+
+  tbody {
+    td {
+      @extend .font-normal;
+
+      width: 120px;
+      min-width: 120px;
+      height: 45px;
+      color: map-get($colors, black, 100);
+      border-radius: map-get($space, "xs");
+      background-color: rgba(120, 181, 23, 0.1);
+
+      &:nth-child(n + 6) {
+        background-color: rgba(52, 52, 52, 10%);
+      }
+
+      &.transparent {
+        background-color: white;
+      }
+
+      &.off {
+        background-color: rgba(229, 29, 29, 0.1);
+      }
     }
   }
 }
