@@ -6,7 +6,7 @@
 
 main {
   background-color: map-get($colors, grey, 100);
-  padding-bottom: map-get($space, "lg");
+  padding-bottom: calc(#{map-get($space, "xl")} * 3);
 }
 
 figure {

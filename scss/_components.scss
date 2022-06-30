@@ -88,6 +88,7 @@
     @extend .font-notosans;
     @extend .font-normal;
     @extend .capitalize;
+
     font-size: 14px;
   }
 
@@ -121,6 +122,88 @@
       &.off {
         background-color: rgba(229, 29, 29, 0.1);
       }
+    }
+  }
+}
+
+.gradebook-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: map-get($space, "xs");
+
+  *:not(.section-title) {
+    @extend .font-notosans;
+    @extend .capitalize;
+
+    font-size: 14px;
+  }
+
+  &__col {
+    background-color: white;
+
+    &:first-child {
+      width: 240px;
+      min-width: 240px;
+    }
+  }
+
+  th,
+  td {
+    color: map-get($colors, black, 100);
+  }
+
+  th {
+    @extend .font-bold;
+
+    text-align: start;
+  }
+
+  td {
+    width: 170px;
+    min-width: 170px;
+    text-align: center;
+  }
+
+  thead {
+    th {
+      @extend .font-normal;
+
+      height: 50px;
+      text-align: center;
+      background-color: map-get($colors, grey, 100);
+    }
+  }
+
+  tbody,
+  tfoot {
+    th,
+    td {
+      height: 50px;
+      padding: 20px;
+      background-color: white;
+      border-radius: map-get($space, "sm");
+    }
+  }
+
+  tbody {
+    [class*="__score"] {
+      &[class*="__score--success"] {
+        color: map-get($colors, green, 100);
+      }
+
+      &[class*="__score--failed"] {
+        color: map-get($colors, red, 200);
+      }
+    }
+  }
+
+  tfoot {
+    [class*="__score"] {
+      @extend .font-bold;
+    }
+
+    [class*="__total-score"] {
+      color: map-get($colors, grey, 500);
     }
   }
 }
