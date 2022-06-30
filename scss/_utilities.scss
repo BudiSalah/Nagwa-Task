@@ -18,12 +18,16 @@
   text-transform: capitalize;
 }
 
+.first-letter-capitalize::first-letter {
+  text-transform: capitalize;
+}
+
 .relative {
   position: relative;
 }
 
 .section {
-  padding-block: map-get($space, "xl");
+  margin-top: map-get($space, "xl");
 }
 
 .flex {
@@ -44,6 +48,10 @@
 
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
 }
 
 .items-center {

@@ -36,12 +36,13 @@ $colors: (
 $space: (
   xl: 40px,
   lg: 32px,
+  base: 26px,
   md: 16px,
   sm: 8px,
   xs: 4px,
 );
 
-$border: 1px solid map-get($colors, grey, 200);
+$border: 1px solid map-get($colors, grey, 400);
 
 $transition: 0.2s all ease-out;
 

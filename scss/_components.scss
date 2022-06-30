@@ -22,3 +22,55 @@
   border-radius: 50%;
   background-color: map-get($colors, red, 100);
 }
+
+.section-title {
+  @extend .flex;
+  @extend .flex-row;
+  @extend .items-center;
+  @extend .font-notosans;
+  @extend .font-bold;
+  @extend .capitalize;
+
+  font-size: 18px;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    margin-inline-end: 10px;
+    width: 10px;
+    height: 32px;
+    background: map-get($colors, brown, 100);
+    border-radius: 10px;
+  }
+}
+
+.btn-icon {
+  min-width: 135px;
+  padding-block: 10px;
+  color: map-get($colors, blue, 200);
+  text-align: center;
+  border: 1px solid map-get($colors, blue, 200);
+  border-radius: map-get($space, "sm");
+  gap: map-get($space, "xs");
+  transition: $transition;
+
+  &:hover {
+    color: white;
+    border-color: white;
+    background-color: map-get($colors, blue, 200);
+
+    svg {
+      fill: white;
+    }
+  }
+
+  svg {
+    fill: map-get($colors, blue, 200);
+  }
+
+  &__text {
+    @media screen and (min-width: map-get($media, "xxl")) {
+      font-size: 16px;
+    }
+  }
+}
